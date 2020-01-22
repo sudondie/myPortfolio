@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         verticalCentered: true,
         sectionsColor: [],
         anchors: [],
-        scrollingSpeed: 600,
+        scrollingSpeed: 500,
         easing: 'swing',
         loopBottom: false,
         loopTop: false,
