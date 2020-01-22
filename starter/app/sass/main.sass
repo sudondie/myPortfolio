@@ -1,0 +1,393 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	line-height: 1.65
+	font-family: 'IBM', sans-serif
+	font-weight: 400
+	color: $text
+	margin: 0
+	padding: 0
+	height: 100vh
+	background-color: #090909
+body.active
+	overflow: hidden
+.header__row1__wrapper
+	display: flex
+.header__row1
+	position: fixed
+	width: 100%
+	background-color: #090909
+	z-index: 6
+	justify-content: space-between
+	padding-top: 10px
+	.row__menu
+		padding: 8px 20px
+	.row__burger:before,.row__burger:after
+		content: ''
+		background-color: #fff
+		position: absolute
+		width: 20px
+		height: 2px
+		left: 0
+	.row__burger:before
+		top: 0
+		transition: 0.2s
+	.row__burger:after
+		bottom: 0
+		transition: 0.2s
+	.row__burger
+		cursor: pointer
+		padding: 10px
+		span
+			background-color: #fff
+			position: absolute
+			left: 0
+			width: 20px
+			height: 2px
+			top: 9px
+			transition: 0.2s
+	.row__burger.active:before
+		transform: rotate(45deg)
+		transition: 0.2s
+		top: 9px
+	.row__burger.active:after
+		transform: rotate(-45deg)
+		transition: 0.2s
+		bottom: 9px
+	.row__burger.active
+		span
+			transform: scale(0)
+
+	.col-md-12
+		display: flex
+		flex-direction: column
+		align-items: center
+		a
+			text-decoration: none
+			color: #fff
+		a:nth-child(2)
+			font-size: 10px
+			color: #CCCCCC
+	.header__menu
+		display: none
+		transition: 0.3s
+		justify-content: space-between
+		align-items: center
+	.header__menu.active
+		width: 100%
+		height: 100vh
+		background-color: #090909
+		display: block
+		position: fixed
+		transition: 0.3s
+		top: 30%
+		z-index: 6
+		.header__list
+			list-style-type: none
+			margin: 0
+			padding: 0
+			text-align: center
+			text-transform: uppercase
+			li
+				transition: 0.3s
+				a
+					text-decoration: none
+					color: #fff
+					font-weight: 500
+					font-size: 38px
+.header
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	z-index: 10
+	background: #090909;
+	.header__row2
+		justify-content: space-around
+		display: flex
+		margin-top: 200px
+		.header__description
+			display: flex
+			flex-direction: column
+			justify-content: center
+			h3
+				color: #808080
+				text-transform: uppercase
+				font-size: 20px
+			h3:before
+				content: '<'
+			h3:after
+				content: '>'
+			p
+				color: #ffffff
+				font-size: 28px
+				font-weight: 500
+			button
+				background-color: #000000
+				border: 3px solid #ffffff
+				border-radius: 5px
+				color: #fff
+				padding: 10px 15px
+				text-transform: uppercase
+				font-weight: 600
+				width: 200px
+		.header__description.active,.header__image.active
+			display: none
+		.header__image
+			display: flex
+			align-items: center
+			justify-content: center
+			img
+				width: 80%
+				height: auto
+	.header__row3
+		display: flex
+		justify-content: space-between
+		padding-bottom: 10px
+		z-index: 5
+		.row__email
+			a
+				text-decoration: none
+				color: #CCCCCC
+		.row__socials
+			.col-md-12
+				display: flex
+				flex-direction: row
+				justify-content: flex-end
+				a
+					margin-right: 10px
+					text-decoration: none
+					color: #808080
+.aboutMe
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	.header__row2
+		margin-top: 100px 
+		.header__description
+			h3
+				color: #fff
+			h3:before
+				content: ''
+			h3:after
+				content: ''
+			p
+				font-size: 18px
+				color: #CCCCCC
+		.header__image
+			img
+				width: 60%
+				height: auto
+		.header__image2
+			display: none
+	.header__row3
+		.row__title
+			p
+				text-transform: uppercase
+				font-weight: 500
+				color: #CCCCCC
+				margin: 0
+		.row__pagenum
+			p
+				color: #808080
+				font-weight: 400
+				margin: 0
+.skills
+	height: 100vh
+	display: flex
+	justify-content: space-between
+	.header__row2
+		margin-top: 200px !important
+		margin-left: 100px !important
+		justify-content: space-between
+		margin: 10px
+		h3
+			color: #ffffff
+			text-transform: uppercase
+		.header__description
+			display: flex
+			flex-direction: row
+			line-height: 1
+			margin-top: 10px
+			p
+				font-size: 18px
+				color: #CCCCCC
+	.header__row3
+		.row__title
+			p
+				text-transform: uppercase
+				font-weight: 500
+				color: #CCCCCC
+				margin: 0
+		.row__pagenum
+			p
+				color: #808080
+				font-weight: 400
+				margin: 0
+.projects
+	height: 100vh
+	display: flex
+	justify-content: space-between
+	.header__row2
+		margin-top: 150px !important
+		margin-left: 100px !important
+		justify-content: space-between
+		margin: 10px
+		h3
+			color: #ffffff
+			text-transform: uppercase
+			z-index: 1
+		.header__description
+			display: flex
+			flex-direction: row
+			line-height: 1
+			margin-top: 10px
+			margin-left: 0
+			p
+				font-size: 18px
+				color: #CCCCCC
+			.col-md-6
+				justify-content: space-between
+				display: flex
+				flex-direction: column
+				.row
+					display: flex
+					justify-content: space-between
+					a
+						text-transform: uppercase
+						color: #808080
+						text-decoration: none
+						margin-top: 10px
+					.col-md-6,.col-md-3
+						margin: 0
+						padding: 0
+					.col-md-3
+						display: flex
+						justify-content: flex-end
+				.projects__links
+					display: flex
+					justify-content: flex-end
+					color: #ffffff
+					text-transform: uppercase
+				.projects__links:before
+					content: '←'
+					margin-right: 10px
+					cursor: pointer
+					color: #808080
+					font-weight: 600
+				.projects__links:after
+					content: '→'
+					font-weight: 600
+					margin-left: 10px
+					cursor: pointer
+					color: #808080
+						
+	.header__row3
+		.row__title
+			p
+				text-transform: uppercase
+				font-weight: 500
+				color: #CCCCCC
+				margin: 0
+		.row__pagenum
+			p
+				color: #808080
+				font-weight: 400
+				margin: 0
+
+//media queries
++media-breakpoint-down(sm)
+	body
+		height: 80vh
+	.header
+		.header__row2
+			.header__description
+				padding-left: 20px
+				padding-right: 20px
+				p
+					font-weight: 600 
+					font-size: 18px
+			.header__image
+				display: none
+	.aboutMe
+		.header__row2
+			display: flex
+			flex-direction: row-reverse 
+			.header__image
+				display: none
+			.header__image2
+				display: flex
+				justify-content: center
+				margin: 0
+				padding: 0
+				img
+					width: 300px
+					height: 200px 
+
++media-breakpoint-down(xs)
+	body
+		height: 80vh
+	.header
+		height: calc(100vh - 60px)
+		.header__row2
+			.header__description
+				padding-left: 20px
+				padding-right: 20px
+		.header__row3
+			justify-content: center
+		.row__email
+			display: none
+	.header .header__row3 .row__socials .col-md-12
+		justify-content: center
+	.header .header__row2 .header__description button 
+		width: 150px
+		border: 2px solid #fff
+	.header .header__row2 .header__menu.active
+		height: 50vh
+				display: none
+	.aboutMe
+		.header__row2
+			display: flex
+			flex-direction: row-reverse 
+			.header__description
+				margin: 0
+				padding: 0
+				h3
+					margin: 10px
+				p
+					font-size: 15px
+					margin: 10px
+			.header__image
+				display: none
+			.header__image2
+				display: flex
+				height: 250px
+				justify-content: center
+				margin: 0
+				padding: 0
+				img
+					width: 100%
+		.header__row3
+			display: none
+		
+// Custom Sass / Remove before use
+
