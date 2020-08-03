@@ -8,5 +8,5 @@
  - Sass
  
  <b>Использованные плагины:</b>
- - pagePilling.js [Ссылка](https://github.com/alvarotrigo/pagePiling.js#pagepilingjs)
+ - pagePilling.js - [Ссылка](https://github.com/alvarotrigo/pagePiling.js#pagepilingjs)
 
