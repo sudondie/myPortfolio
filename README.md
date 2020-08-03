@@ -1,4 +1,4 @@
 # myPortfolio
 Эта страница где лежит код моего сайта-портфолио
-![Image alt](https://github.com/sudondie/raw/master/images/PortfolioColors.PNG)
+![Иллюстрация к проекту](https://github.com/sudondie/images/raw/master/PortfolioColors.PNG)
 
