@@ -1,4 +1,4 @@
 # myPortfolio
-Эта страница где лежит код моего сайта-портфолио
+Основные шрифты и цвета:
 ![Иллюстрация к проекту](https://github.com/sudondie/images/raw/master/PortfolioColors.PNG)
 
