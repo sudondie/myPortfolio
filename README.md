@@ -1,6 +1,6 @@
 # myPortfolio
 <b>Основные шрифты и цвета:</b>
-![Иллюстрация к проекту](https://github.com/sudondie/images/raw/master/PortfolioColors.PNG)
+![Иллюстрация к проекту](https://github.com/sudondie/images/blob/master/PortfolioColors.png?raw=true)
 
 <b>Использованные технологии:</b>
  - Gulp 4 + сопутствующие таски для минификации и т.д
