@@ -4,9 +4,10 @@
 
 <b>Использованные технологии:</b>
  - Gulp 4 + сопутствующие таски для минификации и т.д
- - Bootstrap 4 (кого этим можно удивить)
+ - Bootstrap 4
  - Sass
  
  <b>Использованные плагины:</b>
  - pagePilling.js - [Ссылка](https://github.com/alvarotrigo/pagePiling.js#pagepilingjs)
+ - anime.js - [Ссылка](https://github.com/juliangarnier/anime)
 
