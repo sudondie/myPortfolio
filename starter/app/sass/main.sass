@@ -1,21 +1,18 @@
 @import vars
 @import fonts
 @import libs
-
 ::placeholder
 	color: #666
-
 ::selection
 	background-color: $accent
 	color: #fff
-
+	background: #FF3053
 input, textarea
 	outline: none
 	&:focus:required:invalid
 		border-color: red
 	&:required:valid
 		border-color: green
-
 body
 	font-size: 16px
 	min-width: 320px
@@ -32,15 +29,16 @@ body.active
 .header__row1__wrapper
 	display: flex
 .header__row1
+	min-width: 52px
 	position: fixed
 	width: 100%
-	background-color: #090909
 	z-index: 6
 	justify-content: space-between
 	padding-top: 10px
 	.row__menu
 		padding: 8px 20px
 	.row__burger:before,.row__burger:after
+		cursor: pointer
 		content: ''
 		background-color: #fff
 		position: absolute
@@ -48,9 +46,11 @@ body.active
 		height: 2px
 		left: 0
 	.row__burger:before
+		cursor: pointer
 		top: 0
 		transition: 0.2s
 	.row__burger:after
+		cursor: pointer
 		bottom: 0
 		transition: 0.2s
 	.row__burger
@@ -75,11 +75,10 @@ body.active
 	.row__burger.active
 		span
 			transform: scale(0)
-
-	.col-md-12
+	.row__langswitch
 		display: flex
 		flex-direction: column
-		align-items: center
+		align-items: flex-end
 		a
 			text-decoration: none
 			color: #fff
@@ -88,18 +87,16 @@ body.active
 			color: #CCCCCC
 	.header__menu
 		display: none
-		transition: 0.3s
-		justify-content: space-between
-		align-items: center
 	.header__menu.active
+		margin-top: 20px
 		width: 100%
-		height: 100vh
-		background-color: #090909
-		display: block
-		position: fixed
-		transition: 0.3s
-		top: 30%
-		z-index: 6
+		height: calc(80vh)
+		padding: 0
+		padding-left: 15px
+		display: flex
+		justify-content: center
+		align-items: center
+		z-index: 4
 		.header__list
 			list-style-type: none
 			margin: 0
@@ -113,17 +110,34 @@ body.active
 					color: #fff
 					font-weight: 500
 					font-size: 38px
-.header
+.header,.aboutMe,.skills,.projects,.contacts
 	height: 100vh
+	padding: 0
 	display: flex
 	flex-direction: column
 	justify-content: space-between
 	z-index: 10
-	background: #090909;
+	background: #090909
+	.header__row3
+		.row__title
+			p
+				text-transform: uppercase
+				font-weight: 500
+				color: #CCCCCC
+				margin: 0
+		.row__pagenum
+			.col-md-12
+				display: flex
+				justify-content: flex-end
+				p
+					color: #808080
+					font-weight: 400
+					margin: 0
+.header
 	.header__row2
 		justify-content: space-around
 		display: flex
-		margin-top: 200px
+		margin-top: calc((100vh - 52px - 36.4px)/3)
 		.header__description
 			display: flex
 			flex-direction: column
@@ -149,6 +163,10 @@ body.active
 				text-transform: uppercase
 				font-weight: 600
 				width: 200px
+				transition: 0.2s
+			button:hover
+				background-color: #fff
+				color: #000
 		.header__description.active,.header__image.active
 			display: none
 		.header__image
@@ -177,10 +195,6 @@ body.active
 					text-decoration: none
 					color: #808080
 .aboutMe
-	height: 100vh
-	display: flex
-	flex-direction: column
-	justify-content: space-between
 	.header__row2
 		.header__description
 			h3
@@ -198,25 +212,11 @@ body.active
 				height: auto
 		.header__image2
 			display: none
-	.header__row3
-		.row__title
-			p
-				text-transform: uppercase
-				font-weight: 500
-				color: #CCCCCC
-				margin: 0
-		.row__pagenum
-			p
-				color: #808080
-				font-weight: 400
-				margin: 0
 .skills
-	height: 100vh
-	display: flex
-	justify-content: space-between
 	.header__row2
 		justify-content: center
-		margin-top: 30vh
+		align-items: center
+		padding-top: 52px
 		h3
 			color: #ffffff
 			text-transform: uppercase
@@ -228,34 +228,18 @@ body.active
 			margin-top: 20px
 			.skills_text
 				display: flex
-				flex-direction: row
+				flex-direction: column
 			.col-md-6
 				flex-shrink: 0
 				flex-basis: 400px
 				p
 					font-size: 18px
 					color: #CCCCCC
-	.header__row3
-		.row__title
-			p
-				text-transform: uppercase
-				font-weight: 500
-				color: #CCCCCC
-				margin: 0
-		.row__pagenum
-			p
-				color: #808080
-				font-weight: 400
-				margin: 0
 .projects
-	height: 100vh
-	display: flex
-	justify-content: space-between
 	.header__row2
-		margin-top: 150px !important
-		margin-left: 100px !important
+		margin-top: 90px
+		margin-left: 100px
 		justify-content: space-between
-		margin: 10px
 		h3
 			color: #ffffff
 			text-transform: uppercase
@@ -264,8 +248,7 @@ body.active
 			display: flex
 			flex-direction: row
 			line-height: 1
-			margin-top: 10px
-			margin-left: 0
+			margin-top: 15px
 			p
 				font-size: 18px
 				color: #CCCCCC
@@ -304,96 +287,97 @@ body.active
 					margin-left: 10px
 					cursor: pointer
 					color: #808080
-						
-	.header__row3
-		.row__title
-			p
-				text-transform: uppercase
-				font-weight: 500
-				color: #CCCCCC
-				margin: 0
-		.row__pagenum
-			p
-				color: #808080
-				font-weight: 400
-				margin: 0
 
 //media queries
-
-
 +media-breakpoint-down(sm)
 	body
-		height: 80vh
-	.header
-		.header__row2
-			.header__description
-				padding-left: 20px
-				padding-right: 20px
-				p
-					font-weight: 600 
-					font-size: 18px
-			.header__image
-				display: none
-	.aboutMe
-		.header__row2
-			display: flex
-			flex-direction: row-reverse 
-			.header__image
-				display: none
-			.header__image2
-				display: flex
+		.header
+			height: calc(100vh - 52px)
+			.header__row2
+				margin-top: calc((100vh - 52px - 36.4px)/2)
+				.header__description
+					display: flex
+					align-items: center
+					text-align: center
+					padding-left: 20px
+					padding-right: 20px
+					p
+						font-weight: 600
+						font-size: 18px
+
+				.header__image
+					display: none
+		.aboutMe
+			.header__row2
+				margin-top: 100px
+				.header__image2
+					display: flex
+					justify-content: center
+					margin-bottom: 10px
+					padding: 0
+					img
+						width: 350px
+						height: 200px
+		.skills
+			.header__row2
 				justify-content: center
-				margin: 0
-				padding: 0
-				img
-					width: 300px
-					height: 200px
+				margin-top: calc( 100vh - 52px - 500px )
+				.header__description
+					.skills_text
+						text-align: center
 
 +media-breakpoint-down(xs)
 	body
-		height: 80vh
-	.header
-		height: calc(100vh - 60px)
-		.header__row2
-			.header__description
-				padding-left: 20px
-				padding-right: 20px
-		.header__row3
+		.header
+			height: calc(100vh - 42px)
+			.header__row2
+				margin-top: calc( 100vh - 52px - 36px - 360px)
+				.header__description
+					padding-left: 20px
+					padding-right: 20px
+			.header__row3
+				justify-content: space-between
+			.row__email
+				display: none
+		.header .header__row3 .row__socials .col-md-12
 			justify-content: center
-		.row__email
+		.header .header__row2 .header__description button
+			width: 150px
+			border: 2px solid #fff
+		.header .header__row2 .header__menu.active
+			height: 30vh
 			display: none
-	.header .header__row3 .row__socials .col-md-12
-		justify-content: center
-	.header .header__row2 .header__description button 
-		width: 150px
-		border: 2px solid #fff
-	.header .header__row2 .header__menu.active
-		height: 50vh
-				display: none
-	.aboutMe
-		.header__row2
-			display: flex
-			flex-direction: row-reverse 
-			.header__description
-				margin: 0
-				padding: 0
-				h3
-					margin: 10px
-				p
-					font-size: 15px
-					margin: 10px
-			.header__image
-				display: none
-			.header__image2
+		.aboutMe
+			.header__row2
+				margin-top: calc( 100vh - 52px - 36px - 560px)
 				display: flex
-				height: 250px
+				flex-direction: row-reverse
+				.header__description
+					margin: 5px
+					padding: 0
+					h3
+						margin: 10px
+					p
+						font-size: 15px
+						margin: 10px
+				.header__image
+					display: none
+				.header__image2
+					display: flex
+					height: 250px
+					justify-content: center
+					margin: 0
+					padding: 0
+					img
+						width: 100%
+		.skills
+			.header__row2
 				justify-content: center
-				margin: 0
-				padding: 0
-				img
-					width: 100%
-		.header__row3
-			display: none
-		
-// Custom Sass / Remove before use
+				align-items: center
+				margin-top: calc( 100vh - 52px - 500px )
+				.header__description
+					.skills_text
+						text-align: center
++media-breakpoint-down(md)
 
+// Custom Sass / Remove before use
