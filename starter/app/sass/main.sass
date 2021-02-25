@@ -6,7 +6,7 @@
 ::selection
 	background-color: $accent
 	color: #fff
-	background: #FF3053
+	background: #f1c40f
 input, textarea
 	outline: none
 	&:focus:required:invalid
@@ -14,6 +14,7 @@ input, textarea
 	&:required:valid
 		border-color: green
 body
+	box-sizing: border-box
 	font-size: 16px
 	min-width: 320px
 	line-height: 1.65
@@ -88,15 +89,15 @@ body.active
 	.header__menu
 		display: none
 	.header__menu.active
-		margin-top: 20px
+		margin-top: 35px
 		width: 100%
-		height: calc(80vh)
-		padding: 0
-		padding-left: 15px
+		height: 100vh
 		display: flex
 		justify-content: center
 		align-items: center
 		z-index: 4
+		nav
+			margin-bottom: 102px
 		.header__list
 			list-style-type: none
 			margin: 0
@@ -107,9 +108,19 @@ body.active
 				transition: 0.3s
 				a
 					text-decoration: none
+					border-color: #f1c40f
 					color: #fff
+					background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+					background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+					background-position: 100%
+					background-size: 400%
+					-webkit-transition: background 300ms ease-in-out
+					transition: background 300ms ease-in-out
 					font-weight: 500
 					font-size: 38px
+				a:hover
+					background-position: 0
+					transition: 0.4s
 .header,.aboutMe,.skills,.projects,.contacts
 	height: 100vh
 	padding: 0
@@ -155,18 +166,24 @@ body.active
 				font-size: 28px
 				font-weight: 500
 			button
-				background-color: #000000
 				border: 3px solid #ffffff
 				border-radius: 5px
-				color: #fff
 				padding: 10px 15px
 				text-transform: uppercase
 				font-weight: 600
 				width: 200px
 				transition: 0.2s
+				border-color: #f1c40f
+				background-color: #000
+				color: #Fff
+				background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+				background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%)
+				background-position: 100%
+				background-size: 400%
+				-webkit-transition: background 300ms ease-in-out
+				transition: background 300ms ease-in-out
 			button:hover
-				background-color: #fff
-				color: #000
+				background-position: 0
 		.header__description.active,.header__image.active
 			display: none
 		.header__image
@@ -194,6 +211,8 @@ body.active
 					margin-right: 10px
 					text-decoration: none
 					color: #808080
+	.header__row3.active
+		display: none
 .aboutMe
 	.header__row2
 		.header__description
@@ -206,6 +225,7 @@ body.active
 			p
 				font-size: 18px
 				color: #CCCCCC
+				margin: 5px
 		.header__image
 			img
 				width: 100%
@@ -216,7 +236,7 @@ body.active
 	.header__row2
 		justify-content: center
 		align-items: center
-		padding-top: 52px
+		margin-top: calc((100vh - 52px - 36.4px)/ 3)
 		h3
 			color: #ffffff
 			text-transform: uppercase
@@ -237,9 +257,9 @@ body.active
 					color: #CCCCCC
 .projects
 	.header__row2
-		margin-top: 90px
-		margin-left: 100px
-		justify-content: space-between
+		display: block
+		flex-wrap: wrap
+		justify-content: center
 		h3
 			color: #ffffff
 			text-transform: uppercase
@@ -287,14 +307,27 @@ body.active
 					margin-left: 10px
 					cursor: pointer
 					color: #808080
+		.owl-stage
+			display: flex
+			.owl-item
+				display: flex
+				justify-content: center
+				.slider__item
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+					align-items: center
+					img
+						width: 400px
+						height: 200px
 
 //media queries
 +media-breakpoint-down(sm)
 	body
 		.header
-			height: calc(100vh - 52px)
+			height: 100vh
 			.header__row2
-				margin-top: calc((100vh - 52px - 36.4px)/2)
+				margin-top: calc((100vh - 52px - 36.4px)/3)
 				.header__description
 					display: flex
 					align-items: center
@@ -304,7 +337,6 @@ body.active
 					p
 						font-weight: 600
 						font-size: 18px
-
 				.header__image
 					display: none
 		.aboutMe
@@ -321,32 +353,62 @@ body.active
 		.skills
 			.header__row2
 				justify-content: center
-				margin-top: calc( 100vh - 52px - 500px )
+				margin-top: calc((100vh - 52px - 36.4px)/ 3)
 				.header__description
 					.skills_text
 						text-align: center
+		.projects
+			.header__row2
+				.owl-stage
+					display: flex
+					.owl-item
+						display: flex
+						justify-content: center
+						margin: 10px
+						.slider__item
+							display: flex
+							flex-direction: column
+							justify-content: space-between
+							align-items: center
+							img
+								width: 300px
+								height: 200px
+			.owl-dots
+				display: block
+				width: 300px
+				background-color: #fff
 
 +media-breakpoint-down(xs)
+	.header__menu
+		display: none
+	.header__menu.active
+		margin-top: 30px
+		width: 100%
+		height: 100vh
+		padding-left: 15px
+		display: flex
+		justify-content: center
+		align-items: center
+		z-index: 4
+		nav
+			margin-bottom: 102px
 	body
 		.header
-			height: calc(100vh - 42px)
+			.header__menu
+				padding-left: 15px
+				background-color: #fff
 			.header__row2
-				margin-top: calc( 100vh - 52px - 36px - 360px)
 				.header__description
 					padding-left: 20px
 					padding-right: 20px
 			.header__row3
-				justify-content: space-between
-			.row__email
-				display: none
-		.header .header__row3 .row__socials .col-md-12
-			justify-content: center
+				.row__socials
+					display: none
+				.row__email
+					text-align: center
 		.header .header__row2 .header__description button
 			width: 150px
-			border: 2px solid #fff
-		.header .header__row2 .header__menu.active
-			height: 30vh
-			display: none
+		.header .header__row2
 		.aboutMe
 			.header__row2
 				margin-top: calc( 100vh - 52px - 36px - 560px)
@@ -358,26 +420,35 @@ body.active
 					h3
 						margin: 10px
 					p
-						font-size: 15px
+						font-size: 12px
 						margin: 10px
 				.header__image
 					display: none
 				.header__image2
 					display: flex
-					height: 250px
+					height: auto
+					width: 50%
 					justify-content: center
-					margin: 0
+					align-items: center
+					margin-top: 100px
 					padding: 0
-					img
-						width: 100%
 		.skills
 			.header__row2
 				justify-content: center
 				align-items: center
-				margin-top: calc( 100vh - 52px - 500px )
+				margin-top: calc((100vh - 52px - 36.4px)/ 3)
 				.header__description
 					.skills_text
 						text-align: center
+@media (max-width: 575px) and (max-aspect-ratio: 16/9)
+	.header__row3
+		margin-bottom: 52px
+.header__menu.active
+	nav
+		margin-bottom: 122px
+@media (max-width: 575px) and (min-aspect-ratio: 19/9)
+	.header__row3
+		margin-bottom: 0
 +media-breakpoint-down(md)
 
 // Custom Sass / Remove before use

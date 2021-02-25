@@ -17,7 +17,7 @@ gulp.task('browser-sync', function () {
 		server: {
 			baseDir: 'app/'
 		},
-		tunnel: true
+		/* 		tunnel: true, */
 	});
 });
 
@@ -54,7 +54,8 @@ gulp.task('scripts', function () {
 	return gulp.src([
 			'node_modules/jquery/dist/jquery.min.js',
 			'node_modules/animejs/lib/anime.min.js',
-			'node_modules/pagePiling.js/jquery.pagepiling.js', // Optional jQuery plug-in (npm i --save-dev jquery)
+			'node_modules/pagepiling.js/dist/jquery.pagepiling.min.js',
+			'app/js/owl.carousel.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
 			'app/js/_libs.js', // JS libraries (all in one)
 			'app/js/_custom.js', // Custom scripts. Always at the end
 		])

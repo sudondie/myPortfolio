@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     $('.row__burger').click(function (event) {
-        $('.row__burger,.header__menu,.header__description,.header__image,.aboutMe,body').toggleClass('active');
+        $('.row__burger,.header__row3,.header__menu,.header__description,.header__image,.aboutMe,body,.projects').toggleClass('active');
     });
     let htmlimage = document.querySelector('.header__image');
     let menuButton = document.querySelector('.row__burger');
@@ -28,9 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     htmlimage.onmouseover = animationHTML.play;
     menuButton.onclick = animationMenu.play;
-
-
-
+    $(".owl-carousel").owlCarousel({
+        items: 1,
+        dots: true
+    });
     $('#pagepiling').pagepiling({
         menu: null,
         direction: 'vertical',
@@ -45,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
         navigation: false,
         normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
-        touchSensitivity: 5,
-        keyboardScrolling: true,
+        keyboardScrolling: false,
         sectionSelector: '.section',
         animateAnchor: false,
+        touchSensitivity: 10,
 
         //events
         onLeave: function (index, nextIndex, direction) {},

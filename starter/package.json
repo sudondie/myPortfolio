@@ -26,6 +26,8 @@
 	},
 	"dependencies": {
 		"animejs": "^3.2.1",
-		"pagepiling.js": "^1.5.6"
+		"fullpage": "^1.5.1",
+		"pagepiling.js": "^1.5.6",
+		"slick-carousel": "^1.8.1"
 	}
 }
