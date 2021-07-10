@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   $('.row__burger').click(function (event) {
     $(
-      '.row__burger,.header__row3,.header__menu,.header__description,.header__image,.aboutMe,body,.projects'
+      '.row__burger,.header__row3,.header__menu,.header__description,.header__image,.aboutMe,body,.projects,.skills__certificates'
     ).toggleClass('active');
   });
   let htmlimage = document.querySelector('.header__image');

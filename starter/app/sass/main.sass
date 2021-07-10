@@ -33,7 +33,7 @@ body.active
 	min-width: 52px
 	position: fixed
 	width: 100%
-	z-index: 6
+	z-index: 8
 	justify-content: space-between
 	padding-top: 10px
 	.row__menu
@@ -89,9 +89,9 @@ body.active
 	.header__menu
 		display: none
 	.header__menu.active
-		margin-top: 35px
+		margin-top: 65px
 		width: 100%
-		height: 100vh
+		height: calc(var(--vh, 1vh) * 100 - 65px)
 		display: flex
 		justify-content: center
 		align-items: center
@@ -128,6 +128,7 @@ body.active
 	display: flex
 	flex-direction: column
 	justify-content: space-between
+	align-items: stretch
 	z-index: 10
 	background: #090909
 	.header__row3
@@ -149,7 +150,7 @@ body.active
 	.header__row2
 		justify-content: space-around
 		display: flex
-		margin-top: calc((100vh - 52px - 36.4px)/3)
+		margin-top: calc((calc(var(--vh, 1vh) * 100) - 52px - 36.4px)/3)
 		.header__description
 			display: flex
 			flex-direction: column
@@ -222,6 +223,7 @@ body.active
 		display: none
 .aboutMe
 	.header__row2
+		align-items: center
 		.header__description
 			h3
 				color: #fff
@@ -234,6 +236,8 @@ body.active
 				color: #CCCCCC
 				margin: 5px
 		.header__image
+			width: 30%
+			height: 300px
 			position: relative
 			cursor: pointer
 			background-image: url("../img/me.jpg")
@@ -278,7 +282,7 @@ body.active
 	.header__row2
 		justify-content: center
 		align-items: center
-		margin-top: calc((100vh - 52px - 36.4px)/ 3)
+		margin-top: 60px
 		h3
 			color: #ffffff
 			text-transform: uppercase
@@ -297,6 +301,72 @@ body.active
 				p
 					font-size: 18px
 					color: #CCCCCC
+		.skills__certificates
+			display: flex
+			align-items: center
+			justify-content: center
+			margin-left: 20px
+			margin-right: 20px
+			.header__image-socials
+				background-color: rgba(1, 1, 1, 0.8)
+				width: 100%
+				height: 0%
+				position: absolute
+				display: flex
+				flex-direction: column
+				text-align: center
+				justify-content: center
+				transition: 0.3s
+				visibility: hidden
+				a
+					text-decoration: none
+					color: #fff
+					display: none
+					align-items: center
+					justify-content: center
+					text-transform: uppercase
+					font-weight: 600
+					img
+						width: 15px
+						margin-right: 10px
+						height: auto
+			.english__certificate
+				margin-right: 20px
+				.header__image
+					width: 300px
+					height: 200px
+					background-image: url("../img/english.png")
+					background-size: 100% 100%
+					background-repeat: no-repeat
+					border-radius: 5px
+					position: relative
+				.header__image:hover
+					.header__image-socials
+						height: 100%
+						transition: 0.3s
+						border-radius: 5px
+						visibility: visible
+						a
+							display: flex
+			.nodejs__certificate
+				.header__image
+					width: 300px
+					height: 200px
+					background-image: url("../img/nodejs.png")
+					background-size: 100% 100%
+					background-repeat: no-repeat
+					border-radius: 5px
+					position: relative
+				.header__image:hover
+					.header__image-socials
+						height: 100%
+						transition: 0.3s
+						border-radius: 5px
+						visibility: visible
+						a
+							display: flex
+		.skills__certificates.active
+			display: none
 .projects
 	.header__row2
 		display: block
@@ -370,7 +440,7 @@ body.active
 			height: calc(100vh - 55px)
 			height: calc(var(--vh,1vh) * 100)
 			.header__row2
-				margin-top: calc((100vh - 52px - 36.4px)/3)
+				margin-top: calc((calc(var(--vh,1vh) * 100) - 52px - 36.4px)/3)
 				.header__description
 					display: flex
 					align-items: center
@@ -385,15 +455,44 @@ body.active
 		.aboutMe
 			.header__row2
 				margin-top: 150px
-				.header__image:hover
+				.header__image
+					display: none
+				.header__image2
+					display: flex
+					height: 200px
+					width: 300px
+					justify-content: center
+					position: relative
+					align-items: center
+					padding: 0
+					background-image: url(../img/me.jpg)
+					background-size: 100% 100%
+					background-repeat: no-repeat
+					border-radius: 5px
 					.header__image-socials
-						height: 100%
+						background-color: rgba(255, 255, 255, 0.5)
+						width: 100%
+						height: 0%
+						position: absolute
+						display: flex
+						flex-direction: column
+						text-align: center
+						justify-content: center
 						transition: 0.3s
-						border-radius: 5px
-						visibility: visible
+						visibility: hidden
 						a
-							display: flex
-				.header__image:hover
+							text-decoration: none
+							color: #000
+							display: none
+							align-items: center
+							justify-content: center
+							text-transform: uppercase
+							font-weight: 600
+						img
+							width: 20px
+							margin-right: 10px
+							height: auto
+				.header__image2:hover
 					.header__image-socials
 						height: 100%
 						transition: 0.3s
@@ -404,10 +503,15 @@ body.active
 		.skills
 			.header__row2
 				justify-content: center
-				margin-top: calc((100vh - 52px - 36.4px)/ 3)
+				margin-top: calc((calc(var(--vh,1vh) * 100) - 204px - 36.4px)/3)
 				.header__description
 					.skills_text
 						text-align: center
+				.skills__certificates
+					.english__certificate
+						width: 250px
+					.nodejs__certificate
+						width: 250px
 		.projects
 			.header__row2
 				.owl-stage
@@ -449,6 +553,7 @@ body.active
 				padding-left: 15px
 				background-color: #fff
 			.header__row2
+				margin-top: calc((calc(var(--vh, 1vh) * 100) - 52px - 36.4px)/3)
 				.header__description
 					padding-left: 20px
 					padding-right: 20px
@@ -463,10 +568,13 @@ body.active
 		.header .header__row2
 		.aboutMe
 			.header__row2
-				margin-top: calc( 100vh - 52px - 36px - 560px)
+				margin-top: calc( (calc(var(--vh, 1vh) * 100) - 52px - 36px - 560px)/3)
 				display: flex
 				flex-direction: row-reverse
 				.header__description
+					display: flex
+					flex-direction: colum
+					justify-content: space-around
 					margin: 5px
 					padding: 0
 					h3
@@ -477,21 +585,25 @@ body.active
 				.header__image
 					display: none
 				.header__image2
-					display: flex
-					height: auto
-					width: 50%
-					justify-content: center
-					align-items: center
 					margin-top: 100px
-					padding: 0
 		.skills
 			.header__row2
 				justify-content: center
 				align-items: center
-				margin-top: calc((100vh - 52px - 36.4px)/ 3)
+				margin-top: calc( (calc(var(--vh, 1vh) * 100) - 52px - 36px - 260px)/3)
 				.header__description
 					.skills_text
 						text-align: center
+						p
+							font-size: 13px
+				.skills__certificates
+					flex-direction: column
+					.english__certificate
+						width: 200px
+						height: 80px
+					.nodejs__certificate
+						width: 200px
+						height: 80px
 @media (max-width: 575px) and (max-aspect-ratio: 16/9)
 	.header__row3
 		margin-bottom: 52px
