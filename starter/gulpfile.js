@@ -18,7 +18,7 @@ gulp.task('browser-sync', function () {
       baseDir: 'app/',
     },
     tunnel: true,
-    port: 8000,
+    port: 4000,
   });
 });
 
